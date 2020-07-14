@@ -1,0 +1,9 @@
+sudo: required
+services:
+ -docker
+
+ before_install:
+  - docker build -t fspconnect/docker_react -f Dockerfile.dev .
+
+ script:
+  - docker run -e CI=true fspconnect/docker_react npm run test
