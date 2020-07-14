@@ -1,9 +1,9 @@
 sudo: required
 services:
- -docker
+  - docker
 
- before_install:
-  - docker build -t fspconnect/docker_react -f Dockerfile.dev .
+before_install:
+  - docker build -t FernanSP/docker_react -f Dockerfile.dev .
 
- script:
-  - docker run -e CI=true fspconnect/docker_react npm run test
+script:
+  - docker run -e CI=true FernanSP/docker_react npm run test
